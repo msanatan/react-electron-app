@@ -2,6 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const fs = window.require('fs').promises;
+fs.readdir('./').
+  then((files) => {
+    files.forEach(file => {
+      console.log(file);
+    });
+  }).
+  catch((error) => {
+    console.error(error);
+  });
+
 function App() {
   return (
     <div className="App">
